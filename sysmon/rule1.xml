@@ -1,0 +1,7 @@
+<!-- Detect a process creation (Event ID 1) where the original 
+file name is ncat.exe (a common tool used for reverse shells) -->
+<RuleGroup name="" groupRelation="or">
+    <ProcessCreate onmatch="include">
+        <OriginalFileName condition="is">ncat.exe</OriginalFileName>
+    </ProcessCreate>
+</RuleGroup>

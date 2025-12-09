@@ -1,0 +1,10 @@
+<!--Threat actor  run PowerShell with the -windowstyle hidden flag
+ so the user never sees the blue popup window.-->
+<RuleGroup name="" groupRelation="or">
+		<ProcessCreate onmatch="include">
+				<Rule groupRelation="and">
+						<Image condition="end with">powershell.exe</Image>
+						<CommandLine condition="contains">hidden</CommandLine>
+				</Rule>
+		</ProcessCreate>
+</RuleGroup>

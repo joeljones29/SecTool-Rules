@@ -1,0 +1,6 @@
+<!--Detect any file creation (Event ID 11) that ends with the extension ".locked"-->
+<RuleGroup name="" groupRelation="or">
+    <FileCreate onmatch="include">
+        <TargetFilename condition="end with">.locked</TargetFilename>
+    </FileCreate>
+</RuleGroup>

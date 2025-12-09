@@ -1,0 +1,10 @@
+<!--To detect the usage of whoami.exe (Event ID 1) because attackers use it for Reconnaissance. 
+However, the built-in system account NT AUTHORITY\SYSTEM runs whoami automatically for health checks, creating noise.-->
+<RuleGroup name="" groupRelation="or">
+    <ProcessCreate onmatch="include">
+        <Rule groupRelation="and">
+            <OriginalFileName condition="is">whoami.exe</OriginalFileName>
+            <User condition="is not">NT AUTHORITY\SYSTEM</User>
+        </Rule>
+    </ProcessCreate>
+</RuleGroup>
