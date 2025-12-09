@@ -22,8 +22,8 @@ SecTool-Rules/
 │   └── timealteration.spl     # Detects system time modification (Event ID 4616)
 │
 ├── sysmon/                    # Modular XML configuration snippets for Sysmon
-│   ├── rule1.xml              # Ransomware file extension detection
-│   ├── rule2.xml              # Ncat/Reverse shell tool detection
+│   ├── rule1.xml              # Ncat/Reverse shell tool detection
+│   ├── rule2.xml              # Ransomware file extension detection
 │   ├── rule3.xml              # PowerShell hidden window detection
 │   └── rule4.xml              # Reconnaissance detection (Whoami) with noise filtering
 │
