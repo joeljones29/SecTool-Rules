@@ -1,0 +1,5 @@
+index=main EventCode=4625
+| stats count, values(WorkstationName) as Source_Machine by TargetUserName, _time
+| bucket _time span=1m
+| where count > 10
+| rename TargetUserName as "Attacked Account"

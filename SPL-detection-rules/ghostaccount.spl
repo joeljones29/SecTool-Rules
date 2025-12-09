@@ -1,0 +1,3 @@
+index=main EventCode=4720
+| table _time, SubjectUserName, TargetUserName, SubjectDomainName, TargetDomainName
+| rename SubjectUserName as "Creator_Account", TargetUserName as "New_Backdoor_Account"

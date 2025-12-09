@@ -1,0 +1,8 @@
+index=main EventCode=4616  
+| table _time, SubjectUserName, ProcessName, PreviousTime, NewTime
+| eval Time_Jump_Seconds = abs(strptime(NewTime, "%Y-%m-%dT%H:%M:%S.%Q") - strptime(PreviousTime, "%Y-%m-%dT%H:%M:%S.%Q"))
+| where Time_Jump_Seconds > 600
+
+
+Here: 4616 is for System Time changed. This query alerts if there is diff between old time and new time by more
+than 10 min.
